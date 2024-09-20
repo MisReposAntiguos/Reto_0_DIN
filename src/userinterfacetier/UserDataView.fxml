@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" 
-            prefHeight="200" 
-            prefWidth="320" 
-            xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="userinterfacetier.UserDataWindowController">
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="userinterfacetier.UserDataWindowController">
     <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="etiqueta" />
+        <Button fx:id="button" layoutX="107.0" layoutY="148.0" onAction="#handleButtonAction" text="Mostrarme Datos" />
+        <Label fx:id="dataID" layoutX="72.0" layoutY="33.0" minHeight="16" minWidth="69" />
+        <Label fx:id="dataNombre" layoutX="72.0" layoutY="51.0" minHeight="16" minWidth="69" />
+      <Label fx:id="id" layoutX="14.0" layoutY="33.0" minHeight="16" minWidth="27.0" prefHeight="18.0" prefWidth="27.0" text="ID:" underline="true" />
+      <Label fx:id="nombre" layoutX="14.0" layoutY="51.0" minHeight="16" minWidth="27.0" prefHeight="18.0" prefWidth="58.0" text="Nombre:" underline="true" />
+      <Label fx:id="dataEdad" layoutX="207.0" layoutY="51.0" minHeight="16" minWidth="69" />
+      <Label fx:id="edad" layoutX="149.0" layoutY="51.0" minHeight="16" minWidth="27.0" prefHeight="18.0" prefWidth="58.0" text="Edad:" underline="true" />
+      <Label fx:id="dataTelefono" layoutX="72.0" layoutY="91.0" minHeight="16" minWidth="69" />
+      <Label fx:id="telefono" layoutX="14.0" layoutY="91.0" minHeight="16" minWidth="27.0" prefHeight="18.0" prefWidth="58.0" text="Teléfono:" underline="true" />
+      <Label fx:id="dataEmail" layoutX="72.0" layoutY="109.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="221.0" />
+      <Label fx:id="email" layoutX="14.0" layoutY="109.0" minHeight="16" minWidth="27.0" prefHeight="18.0" prefWidth="58.0" text="Email:" underline="true" />
     </children>
 </AnchorPane>
