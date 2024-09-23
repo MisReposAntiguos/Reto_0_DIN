@@ -17,6 +17,7 @@ public interface DataAccessible {
      *
      * @return Un objeto {@link User} que contiene la información del usuario.
      * Si no se encuentra ningún usuario, puede devolver null.
+     * @throws java.sql.SQLException
      */
-    public User leerDatos();
+    public User leerDatos() throws Exception;
 }

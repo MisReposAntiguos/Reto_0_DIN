@@ -23,9 +23,11 @@ public class FileUserDataAccessor implements DataAccessible {
      *
      * @return Un objeto {@link User} que contiene la información del usuario.
      * Nunca devuelve null.
+     * @throws java.lang.Exception
      */
     @Override
-    public User leerDatos() {
+    public User leerDatos() throws Exception{
+        
         usuario = new User();
         usuario.setId(Integer.parseInt(ResourceBundle.getBundle("dataaccesstier.Ficheroconfig").getString("ID")));
         usuario.setNombre(ResourceBundle.getBundle("dataaccesstier.Ficheroconfig").getString("NOMBRE"));

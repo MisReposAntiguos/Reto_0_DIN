@@ -1,9 +1,11 @@
 package userinterfacetier;
 
-import dataaccesstier.DataAccessible;
 import dataaccesstier.UserManagerFactory;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import model.User;
 
@@ -43,22 +45,28 @@ public class UserDataWindowController {
      */
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        DataAccessible acceso = UserManagerFactory.crearAcceso();
-        User usuario = acceso.leerDatos();
+        try {
 
-        if (usuario != null) {
-            dataID.setText(usuario.getId().toString());
-            dataNombre.setText(usuario.getNombre());
-            dataEdad.setText(usuario.getEdad().toString());
-            dataTelefono.setText(usuario.getTelefono().toString());
-            dataEmail.setText(usuario.getEmail());
-        } else {
-            // Manejo del caso donde el usuario es nulo
-            dataID.setText("No encontrado");
-            dataNombre.setText("No encontrado");
-            dataEdad.setText("No encontrado");
-            dataTelefono.setText("No encontrado");
-            dataEmail.setText("No encontrado");
-        }
+            User usuario = UserManagerFactory.crearAcceso().leerDatos();;
+
+            if (usuario != null) {
+                dataID.setText(usuario.getId().toString());
+                dataNombre.setText(usuario.getNombre());
+                dataEdad.setText(usuario.getEdad().toString());
+                dataTelefono.setText(usuario.getTelefono().toString());
+                dataEmail.setText(usuario.getEmail());
+            } else {
+                // Manejo del caso donde el usuario es nulo
+                dataID.setText("No encontrado");
+                dataNombre.setText("No encontrado");
+                dataEdad.setText("No encontrado");
+                dataTelefono.setText("No encontrado");
+                dataEmail.setText("No encontrado");
+            }
+            
+        } catch (Exception e) {
+            Logger.getLogger("hellotiersworld.ui").severe(e.getLocalizedMessage());
+            new Alert(Alert.AlertType.ERROR, e.getLocalizedMessage(), ButtonType.OK).showAndWait();
+        } 
     }
 }

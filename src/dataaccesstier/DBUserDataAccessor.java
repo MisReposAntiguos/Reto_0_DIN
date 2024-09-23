@@ -70,9 +70,10 @@ public class DBUserDataAccessor implements DataAccessible {
      *
      * @return Un objeto {@link User} que contiene la información del usuario, o
      * null si no se encontraron usuarios en la base de datos.
+     * @throws java.lang.Exception
      */
     @Override
-    public User leerDatos() {
+    public User leerDatos() throws Exception {
         User usuario = null;
         ResultSet resultado;
 
@@ -89,8 +90,7 @@ public class DBUserDataAccessor implements DataAccessible {
                 usuario.setEdad(resultado.getInt("EDAD"));
             }
 
-        } catch (SQLException evento) {
-            evento.printStackTrace();
+        
         } finally {
             closeConnection();
         }
