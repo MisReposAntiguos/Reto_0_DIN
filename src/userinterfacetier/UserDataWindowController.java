@@ -47,7 +47,7 @@ public class UserDataWindowController {
     private void handleButtonAction(ActionEvent event) {
         try {
 
-            User usuario = UserManagerFactory.crearAcceso().leerDatos();;
+            User usuario = UserManagerFactory.crearAcceso().leerDatos();
 
             if (usuario != null) {
                 dataID.setText(usuario.getId().toString());
