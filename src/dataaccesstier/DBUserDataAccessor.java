@@ -14,7 +14,7 @@ import model.User;
  * la información de un usuario desde una base de datos relacional. Utiliza JDBC
  * para establecer la conexión y ejecutar consultas SQL.
  *
- * @author 2dam
+ * @author Sergio
  */
 public class DBUserDataAccessor implements DataAccessible {
 
@@ -49,17 +49,16 @@ public class DBUserDataAccessor implements DataAccessible {
 
     /**
      * Cierra la conexión a la base de datos y libera los recursos utilizados.
+     *
+     * @throws SQLException Si ocurre un error al cerrar la conexión.
      */
-    private void closeConnection() {
-        try {
+    private void closeConnection() throws SQLException {
+
             if (declaracion != null) {
                 declaracion.close();
             }
             if (conexion != null) {
                 conexion.close();
-            }
-        } catch (SQLException evento) {
-            evento.printStackTrace();
         }
     }
 
@@ -70,10 +69,11 @@ public class DBUserDataAccessor implements DataAccessible {
      *
      * @return Un objeto {@link User} que contiene la información del usuario, o
      * null si no se encontraron usuarios en la base de datos.
-     * @throws java.lang.Exception
+     * 
+     * @throws SQLException Si ocurre un error al ejecutar un Query.
      */
     @Override
-    public User leerDatos() throws Exception {
+    public User leerDatos() throws SQLException {
         User usuario = null;
         ResultSet resultado;
 

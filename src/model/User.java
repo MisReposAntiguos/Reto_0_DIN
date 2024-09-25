@@ -5,7 +5,7 @@ package model;
  * básica de un usuario, incluyendo su ID, nombre, correo electrónico, teléfono
  * y edad. Proporciona métodos para obtener y establecer estos atributos.
  *
- * @author 2dam
+ * @author Urko
  */
 public class User {
 

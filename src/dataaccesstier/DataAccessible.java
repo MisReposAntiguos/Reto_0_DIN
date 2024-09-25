@@ -6,7 +6,7 @@ import model.User;
  * Interfaz para la capa de acceso a datos de usuario. Esta interfaz define los
  * métodos necesarios para acceder y manipular datos de usuarios en el sistema.
  *
- * @author 2dam
+ * @author 2dam Equipo
  */
 public interface DataAccessible {
 
@@ -17,7 +17,7 @@ public interface DataAccessible {
      *
      * @return Un objeto {@link User} que contiene la información del usuario.
      * Si no se encuentra ningún usuario, puede devolver null.
-     * @throws java.sql.SQLException
+     * @throws Exception
      */
     public User leerDatos() throws Exception;
 }

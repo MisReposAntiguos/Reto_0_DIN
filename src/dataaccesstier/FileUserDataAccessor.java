@@ -1,5 +1,6 @@
 package dataaccesstier;
 
+import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 import model.User;
 
@@ -9,7 +10,7 @@ import model.User;
  * información de un usuario desde un archivo de configuración utilizando
  * {@link ResourceBundle}.
  *
- * @author 2dam
+ * @author Urko
  */
 public class FileUserDataAccessor implements DataAccessible {
 
@@ -26,8 +27,8 @@ public class FileUserDataAccessor implements DataAccessible {
      * @throws java.lang.Exception
      */
     @Override
-    public User leerDatos() throws Exception{
-        
+    public User leerDatos() throws MissingResourceException {
+
         usuario = new User();
         usuario.setId(Integer.parseInt(ResourceBundle.getBundle("dataaccesstier.Ficheroconfig").getString("ID")));
         usuario.setNombre(ResourceBundle.getBundle("dataaccesstier.Ficheroconfig").getString("NOMBRE"));

@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 /**
  * This class is a controler for teh user application window
  *
- * @author 2dam
+ * @author 2dam Equipo
  */
 public class Application extends javafx.application.Application {
     //Escenario Principal
