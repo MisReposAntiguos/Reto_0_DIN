@@ -17,7 +17,8 @@ public interface DataAccessible {
      *
      * @return Un objeto {@link User} que contiene la información del usuario.
      * Si no se encuentra ningún usuario, puede devolver null.
-     * @throws Exception
+     * @throws Exception Si hay algun error con la base de datos o con el
+     * fichero
      */
     public User leerDatos() throws Exception;
 }
